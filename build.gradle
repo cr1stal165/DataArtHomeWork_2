@@ -1,0 +1,24 @@
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "ru.dataart.academy.java.Main"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    baseName = 'homework'
+    version =  '0.0.1'
+    manifest {
+        attributes "Main-Class": "ru.dataart.academy.java.Main"
+        attributes "Class-Path": configurations.compileClasspath.collect { it.absolutePath }.join(" ")
+    }    
+}
+
+dependencies {
+    // Nothing here yet
+}
